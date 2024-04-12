@@ -1,0 +1,104 @@
+﻿<Window x:Class="agendav2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:agendav2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Border CornerRadius="1" BorderBrush="#152A34" BorderThickness="1" Background="White">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--#region left bar -->
+
+            <!-- Icon software -->
+            <Border Grid.Column="0" Grid.Row="0" >
+            </Border>
+
+            <!-- Menu -->
+            <Grid Grid.Column="0" Grid.Row="1" Name="GridMenu">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <Border>
+                    <StackPanel VerticalAlignment="Center" Name="StackPanelMenu">
+                        <Label Content="Contact" HorizontalAlignment="Center"/>
+                        <Button Name="BtnSchedule" IsDefault="True" Click="btn_navClick">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="add contact"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="BtnContacts" Click="BTN_contactClick">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Contacts"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="Btnmodify" Click="BTN_modify_Click">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="modify"/>
+                            </StackPanel>
+                        </Button>
+                        <Label Content="to do list" HorizontalAlignment="Center"/>
+                        <Button Name="Btntodolistadd" Click="BTN_ToDoAdd_Click">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="add todolist"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="Btntodolist" Click="BTN_todo_Click">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="todolist"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="Btn" Click="BTN_todomodif_Click">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="modify ToDo"/>
+                            </StackPanel>
+                        </Button>
+                        <Label Content="task" HorizontalAlignment="Center"/>
+
+                        <Button Name="Btn_add_task" Click="BTN_task_add_Click">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="add task"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="Btn_task" Click="BTN_task_Click">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="task"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="Btn_modify_task" Click="BTN_task_modif_Click">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="modify task"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Border>
+                <Button Content="config" Name="config" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="60" Height="35" FontSize="15" Margin="0,0,0,1" Grid.RowSpan="2" Click="config_Click"/>
+            </Grid>
+            <!--#endregion-->
+
+            <!-- Header -->
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Mon Agenda" Grid.Column="0"/>
+                <TextBlock Text="made by thomas collignon" Grid.Column="1" HorizontalAlignment="Right"/>
+
+            </Grid>
+            <!-- View Container -->
+            <Grid Grid.Column="1" Grid.Row="1" Name="GridContainer" >
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
